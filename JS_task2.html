@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetically Sorted String</title>
+</head>
+<body>
+    <h1>Program to Sort String Alphabetically</h1>
+
+    <script>
+        function sortStringAlphabetically(str) {
+            let charArray = str.split('');
+            let sortedArray = charArray.sort();
+            let sortedString = sortedArray.join('');
+            return sortedString;
+        }
+
+        let inputString = 'webmaster';
+        let outputString = sortStringAlphabetically(inputString);
+
+        document.write(`<p>Original String: ${inputString}</p>`);
+        document.write(`<p>Sorted String: ${outputString}</p>`);
+    </script>
+</body>
+</html>

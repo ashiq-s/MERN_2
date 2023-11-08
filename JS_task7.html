@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Example</title>
+<style>
+    .box {
+        width: 380px;
+        height: 200px;
+        background-image: url('train.png');
+        background-size: cover;
+        margin: 20px;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+    <center>
+        <h1>Train Animation</h1>
+    </center>
+    <div class="box" id="animatedBox"></div>
+        <div>
+        <h3 align="center" style="color:darkblue">Click the following buttons to handle animation</h3>
+        <div class="this" style="display:flex; justify-content: center; column-gap: 2px;">
+            <button onclick="startAnimation()">Start</button>
+            <button onclick="stopAnimation()">Stop</button>
+        </div>
+    </div>
+  
+
+    <script>
+        let animationInterval;
+        let position = 0;
+
+        function startAnimation() {
+            let box = document.getElementById('animatedBox');
+            animationInterval = setInterval(() => {
+            position += 10;
+            box.style.left = `${position}px`;
+            }, 100);
+        }
+
+        function stopAnimation() {
+            clearInterval(animationInterval);
+        }
+    </script>
+</body>
+</html>

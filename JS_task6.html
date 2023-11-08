@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            margin-top: 10px;
+			font-size: medium;
+        }
+
+
+        #wrapper {
+            width: 500px;
+            height: 50%;
+            overflow: hidden;
+            border: 0px solid #000;
+            margin: 50px auto;
+            padding: 10px;
+        }
+
+        .main-content {
+            width: 300px;
+            height: 40%;
+            margin: 10px auto;
+            background-color: #fff;
+            border: 2px solid #e6e6e6;
+            padding: 40px 50px;
+        }
+
+        .header {
+            border: 0px solid #000;
+            margin-bottom: 5px;
+        }
+
+        .header img {
+            height: 100px;
+            width: 215px;
+            margin-left: 47px;
+            /* position: relative; */
+            left: 40px;
+        }
+
+        .input-1, .input-2 {
+            width: 100%;
+            margin-bottom: 5px;
+            padding: 8px 12px;
+            border: 1px solid #dbdbdb;
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+
+        .btn {
+            width: 100%;
+			height: 40px;
+			margin-top: 20px;
+            background-color: #3897f0;
+            border: 1px solid #3897f0;
+            padding: 5px 12px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+		.btn:hover {
+			text-decoration: underline;
+		}
+
+        .sub-content {
+            width: 250px;
+            height: 40%;
+            margin: 10px auto;
+            padding: 20px 50px;
+        }
+
+        .s-part {
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .s-part a {
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .in1{
+            display: flex;
+        }
+
+		a {
+			color: #3897f0;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: blue;
+			text-decoration: underline;
+		}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="main-content">
+            <div class="header">
+                <img src="instaLogo.png"/>
+            </div>
+            <div>
+                <div class="in1">
+                    <span><i class="fa-solid fa-user" style="margin-top: 10px; margin-right: 8px;"></i></span>
+                	<input type="text" id="name" placeholder="Username" class="input-1" />
+                </div>
+				<p id="nameError"></p>
+                
+                <div style="display: flex;">
+                    <i class="fa-solid fa-lock" style="margin-top: 20px; margin-right: 8px;"></i>
+                	<input type="password" id="password" placeholder="Password" class="input-2" />
+                </div>
+				<p id="passwordError"></p>
+
+                <input type="submit" value="Log in" class="btn" onclick="validateLogin()" />
+            </div>
+
+            <div class="last" style="display: flex; justify-content: space-between;">
+                <div style="margin-top: 0%;">
+					<input type="checkbox">
+                	<label for="vehicle1">Remember me</label><br>
+				</div>
+
+                <div>
+					<a href="">Forgot Password?</a>
+				</div>
+            </div>
+        </div>
+        <div class="sub-content">
+			<div class="s-part">
+				Don't have an account! <a href="#" style="margin-left: 5px;">Sign up here.</a>
+			</div>
+        </div>
+	</div>
+
+	<p id="debug"></p>
+
+	<script>
+		function validateLogin() {
+			let username = document.getElementById("name").value;
+			if (username.trim() == '') {
+				document.getElementById('name').style.border = '1px solid red'
+				document.getElementById("nameError").style.color = 'red';
+				document.getElementById("nameError").textContent = "Enter valid username.";
+			}
+			else {
+				document.getElementById('name').style.border = '#000'
+				document.getElementById("nameError").style.color = '';
+				document.getElementById("nameError").textContent = "";
+			}
+
+            let password = document.getElementById('password').value;
+            if (password.trim() === '') {
+                document.getElementById('password').style.border = '1px solid red';
+                document.getElementById('passwordError').style.color = 'red';
+                document.getElementById('passwordError').textContent = 'Enter valid password.';
+            }
+            else {
+                document.getElementById('password').style.border = '#000'
+				document.getElementById("passwordError").style.color = '';
+				document.getElementById("passwordError").textContent = "";
+            }
+		}
+	</script>
+</body>
+</html>
